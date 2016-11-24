@@ -1,0 +1,27 @@
+<svg x="0px" y="0px" viewBox="0 0 261.7 41.1">
+	<g>
+		<text transform="matrix(1 0 0 1 208.553 35.7717)" fill="#818285" font-family="'Roboto-Regular'" font-size="12">XXXXXXX</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 19.7978 35.7717)" fill="#818285" font-family="'Roboto-Regular'" font-size="12">0</text>
+	</g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="77.4009" y1="-201.7549" x2="245.1427" y2="-201.7549" gradientTransform="matrix(1 0 0 1 -43 233.3822)">
+		<stop  offset="1.082191e-02" style="stop-color:#FFFFFF"/>
+		<stop  offset="5.005246e-02" style="stop-color:#FFF2EA"/>
+		<stop  offset="0.1242" style="stop-color:#FDD7C3"/>
+		<stop  offset="0.2255" style="stop-color:#F9AD8B"/>
+		<stop  offset="0.3486" style="stop-color:#F4774C"/>
+		<stop  offset="0.438" style="stop-color:#EF4523"/>
+		<stop  offset="0.515" style="stop-color:#DA4023"/>
+		<stop  offset="0.6606" style="stop-color:#B33621"/>
+		<stop  offset="0.8575" style="stop-color:#792418"/>
+		<stop  offset="1" style="stop-color:#53140C"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M34.7,27.6h167.5v8H34.7c-0.2,0-0.3-0.1-0.3-0.3v-7.4C34.4,27.7,34.5,27.6,34.7,27.6z"/>
+	<g>
+		<path fill="none" d="M221.1,22.9H0.3c-0.2,0-0.3-0.1-0.3-0.1V5.2c0-0.1,0.2-0.1,0.3-0.1h220.7c0.2,0,0.3,0.1,0.3,0.1v17.5
+			C221.4,22.9,221.3,22.9,221.1,22.9z"/>
+		<text transform="matrix(1 0 0 1 19.857 14.2615)" fill="#818285" font-family="'Roboto-Regular'" font-size="12">Cantidad de habitantes por km</text>
+		<text transform="matrix(0.583 0 0 0.583 217.4819 10.2654)" fill="#818285" font-family="'Roboto-Regular'" font-size="12">2</text>
+	</g>
+</svg>
