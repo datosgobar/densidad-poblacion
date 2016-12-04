@@ -46,6 +46,7 @@ $icon_color: silver;
   width: 1rem;
   margin-right: 2px;
 }
+
 /* Generales */
 html {
   @media(min-width:415px) {
@@ -73,9 +74,8 @@ html {
 input:focus, button:focus {
     outline: none;
 }
-a, a:hover, a:focus {
-    text-decoration: none;
-    color: rgb(51, 51, 51);
+a {
+  text-decoration: none;
 }
 sup {
   vertical-align: text-top;
@@ -111,14 +111,25 @@ sup {
       height: 30px;
       border-radius: 30px;
       background-color: white;
-      border: 2px solid silver;
+      border: 0px;
       cursor: pointer;
       svg {
         width: 15px;
         height: 15px;
       }
     }
+    a {
+      @media(min-width:600px) {
+        display: block;
+      }
+      display: none;
+      color: #989898;
+      &:hover {
+        color: black;
+      }
+    }
   }
+
   .nav_map {
     @extend %header;
     @media(min-width:600px) {
@@ -153,7 +164,7 @@ sup {
           width: 120px;
           border-left: 1px solid silver;
           text-align: left;
-          padding: 10px;
+          padding: 0px 10px;
         }
         border: 0;
         width: 100%;
@@ -168,6 +179,17 @@ sup {
         height: 40px;
         font-size: 12px;
         fill: $text_color;
+      }
+    }
+    a {
+      @media(min-width:600px) {
+        display: none;
+      }
+      display: block;
+      padding: 10px;
+      color: #989898;
+      &:hover {
+        color: black;
       }
     }
   }
@@ -260,6 +282,7 @@ sup {
       svg {
         width: 20px;
         fill: silver;
+        cursor: pointer;
         &:hover {
           fill: $text_color;
         }
@@ -342,9 +365,6 @@ sup {
     flex-direction: row;
     width: 100%;
     box-shadow: none;
-    .geocoder-icon.geocoder-icon-close {
-      display: none;
-    }
     input[type="text"] {
       @extend %none_mar;
       @media(min-width:600px) {
@@ -354,7 +374,7 @@ sup {
       border-radius: 5px;
       border: 1px solid silver;
       background: white;
-      padding: 10px 40px 10px 10px;
+      padding: 10px 10px 10px 40px;
       border-right: none;
       font-size: 14px;
     }
@@ -378,19 +398,58 @@ sup {
   /* right: 0px; */
 }
 
-
-// Lupa
-#lupa {
+// Tutorial
+#tutorial {
+  @extend %none_pad_mar;
+  @extend %flex_row;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  right: 10px;
-  &:hover {
-    background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  .containerTutorial {
+    @extend %flex_colum;
+    @media(min-width:600px){
+      width: 50%;
+    }
+    position: relative;
+    width: 75%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    .checkTutorial {
+      width: 100%;
+      text-align: left;
+      margin-top: 20px;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      &:hover {
+        background-color: silver;
+        border-radius: 25px;
+      }
+    }
+    .visualizacion {
+      cursor: pointer;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      background-color: silver;
+      &:hover {
+        background-color: gray;
+        color: white;
+      }
+    }
   }
-}
-.mapboxgl-ctrl-geocoder .geocoder-icon-search {
-  position: relative;
-  top: 0px;
-  left: 0px;
 }
 
 // SVG style

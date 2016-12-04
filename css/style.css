@@ -1,19 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
-.container_panel footer, .header_container .nav_gob button, .container_panel header h3, #panel_show {
+.container_panel footer, #tutorial .containerTutorial, .header_container .nav_gob button, .container_panel header h3, #tutorial, #panel_show {
   display: flex;
   justify-content: center;
   align-items: center; }
 
-.container_panel footer {
+.container_panel footer, #tutorial .containerTutorial {
   flex-direction: column; }
 
-.header_container .nav_gob button, .container_panel header h3 {
+.header_container .nav_gob button, .container_panel header h3, #tutorial {
   flex-direction: row; }
 
-html body, .contenido_app, .header_container .nav_gob button, .header_container .nav_map div h1, .header_container .nav_map div h2, .header_container .nav_map div .scale_graphic svg, #panel_show, .container_panel footer aside, .tooltip, .tooltip .contentTooltip section, .mapboxgl-ctrl-top-left .mapboxgl-ctrl-geocoder.mapboxgl-ctrl, .tooltip .contentTooltip section article {
+html body, .contenido_app, .header_container .nav_gob button, .header_container .nav_map div h1, .header_container .nav_map div h2, .header_container .nav_map div .scale_graphic svg, #panel_show, .container_panel footer aside, .tooltip, .tooltip .contentTooltip section, .mapboxgl-ctrl-top-left .mapboxgl-ctrl-geocoder.mapboxgl-ctrl, #tutorial, .tooltip .contentTooltip section article {
   padding: 0px; }
 
-html body, .contenido_app, .header_container .nav_gob button, .header_container .nav_map div h1, .header_container .nav_map div h2, .header_container .nav_map div .scale_graphic svg, #panel_show, .container_panel footer aside, .tooltip, .tooltip .contentTooltip section, .mapboxgl-ctrl-top-left .mapboxgl-ctrl-geocoder.mapboxgl-ctrl, .header_container .nav_gob, .header_container .nav_map, .container_panel, .container_panel header h3, .tooltip .contentTooltip, .mapboxgl-ctrl-top-left, .mapboxgl-ctrl-top-left .mapboxgl-ctrl-geocoder.mapboxgl-ctrl input[type="text"], .mapboxgl-ctrl-bottom-left .mapboxgl-ctrl {
+html body, .contenido_app, .header_container .nav_gob button, .header_container .nav_map div h1, .header_container .nav_map div h2, .header_container .nav_map div .scale_graphic svg, #panel_show, .container_panel footer aside, .tooltip, .tooltip .contentTooltip section, .mapboxgl-ctrl-top-left .mapboxgl-ctrl-geocoder.mapboxgl-ctrl, #tutorial, .header_container .nav_gob, .header_container .nav_map, .container_panel, .container_panel header h3, .tooltip .contentTooltip, .mapboxgl-ctrl-top-left, .mapboxgl-ctrl-top-left .mapboxgl-ctrl-geocoder.mapboxgl-ctrl input[type="text"], .mapboxgl-ctrl-bottom-left .mapboxgl-ctrl {
   margin: 0px; }
 
 .header_container .nav_gob, .header_container .nav_map {
@@ -51,9 +51,8 @@ html {
 input:focus, button:focus {
   outline: none; }
 
-a, a:hover, a:focus {
-  text-decoration: none;
-  color: #333333; }
+a {
+  text-decoration: none; }
 
 sup {
   vertical-align: text-top;
@@ -79,7 +78,7 @@ sup {
       height: 30px;
       border-radius: 30px;
       background-color: white;
-      border: 2px solid silver;
+      border: 0px;
       cursor: pointer; }
       @media (min-width: 600px) {
         .header_container .nav_gob button {
@@ -87,6 +86,14 @@ sup {
       .header_container .nav_gob button svg {
         width: 15px;
         height: 15px; }
+    .header_container .nav_gob a {
+      display: none;
+      color: #989898; }
+      @media (min-width: 600px) {
+        .header_container .nav_gob a {
+          display: block; } }
+      .header_container .nav_gob a:hover {
+        color: black; }
   .header_container .nav_map {
     flex-direction: column;
     justify-content: space-between;
@@ -125,11 +132,20 @@ sup {
             width: 120px;
             border-left: 1px solid silver;
             text-align: left;
-            padding: 10px; } }
+            padding: 0px 10px; } }
       .header_container .nav_map div .scale_graphic svg {
         height: 40px;
         font-size: 12px;
         fill: #5D5D5D; }
+    .header_container .nav_map a {
+      display: block;
+      padding: 10px;
+      color: #989898; }
+      @media (min-width: 600px) {
+        .header_container .nav_map a {
+          display: none; } }
+      .header_container .nav_map a:hover {
+        color: black; }
 
 #map {
   position: absolute;
@@ -205,7 +221,8 @@ sup {
       margin-top: 5px; }
       .container_panel footer aside svg {
         width: 20px;
-        fill: silver; }
+        fill: silver;
+        cursor: pointer; }
         .container_panel footer aside svg:hover {
           fill: #5D5D5D; }
 
@@ -270,14 +287,12 @@ sup {
     flex-direction: row;
     width: 100%;
     box-shadow: none; }
-    .mapboxgl-ctrl-top-left .mapboxgl-ctrl-geocoder.mapboxgl-ctrl .geocoder-icon.geocoder-icon-close {
-      display: none; }
     .mapboxgl-ctrl-top-left .mapboxgl-ctrl-geocoder.mapboxgl-ctrl input[type="text"] {
       width: 100%;
       border-radius: 5px;
       border: 1px solid silver;
       background: white;
-      padding: 10px 40px 10px 10px;
+      padding: 10px 10px 10px 40px;
       border-right: none;
       font-size: 14px; }
       @media (min-width: 600px) {
@@ -298,16 +313,48 @@ sup {
   /* left: 0px; */
   /* right: 0px; */ }
 
-#lupa {
+#tutorial {
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  right: 10px; }
-  #lupa:hover {
-    background-color: transparent; }
-
-.mapboxgl-ctrl-geocoder .geocoder-icon-search {
-  position: relative;
-  top: 0px;
-  left: 0px; }
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 999; }
+  #tutorial .containerTutorial {
+    position: relative;
+    width: 75%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center; }
+    @media (min-width: 600px) {
+      #tutorial .containerTutorial {
+        width: 50%; } }
+    #tutorial .containerTutorial .checkTutorial {
+      width: 100%;
+      text-align: left;
+      margin-top: 20px; }
+    #tutorial .containerTutorial .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      width: 25px;
+      height: 25px; }
+      #tutorial .containerTutorial .close:hover {
+        background-color: silver;
+        border-radius: 25px; }
+    #tutorial .containerTutorial .visualizacion {
+      cursor: pointer;
+      padding: 5px 20px;
+      border-radius: 5px;
+      border: 1px solid gray;
+      background-color: silver; }
+      #tutorial .containerTutorial .visualizacion:hover {
+        background-color: gray;
+        color: white; }
 
 .areaIconSvg {
   fill: none;

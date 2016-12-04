@@ -39,9 +39,12 @@ foreach ($data->features as $key => $value) {
   }
 
   // Redondeando valores
-  $value->properties->densidad = round($value->properties->densidad, 0);
-  $value->properties->area = round(intval($value->properties->area), 0);
-  $value->properties->poblacion = round(intval($value->properties->poblacion), 0);
+  // $value->properties->densidad = round($value->properties->densidad, 0);
+  // $value->properties->area = round(intval($value->properties->area), 0);
+  // $value->properties->poblacion = round(intval($value->properties->poblacion), 0);
+  $value->properties->densidad = intval($value->properties->densidad);
+  $value->properties->area = intval($value->properties->area);
+  $value->properties->poblacion = intval($value->properties->poblacion);
 
   // Se ajusta escala para generar picos
   // $value->properties->densidad = $value->properties->densidad * 1000;
