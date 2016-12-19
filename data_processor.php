@@ -16,6 +16,8 @@ $min = 0;
 $max = 0;
 $total = 0;
 
+$maxD = 0;
+$valueDensidadMaxima = "";
 // Read File
 $read = file_get_contents($file);
 $data = json_decode($read);
@@ -42,9 +44,9 @@ foreach ($data->features as $key => $value) {
   // $value->properties->densidad = round($value->properties->densidad, 0);
   // $value->properties->area = round(intval($value->properties->area), 0);
   // $value->properties->poblacion = round(intval($value->properties->poblacion), 0);
-  $value->properties->densidad = intval($value->properties->densidad);
-  $value->properties->area = intval($value->properties->area);
-  $value->properties->poblacion = intval($value->properties->poblacion);
+  // $value->properties->densidad = intval($value->properties->densidad);
+  // $value->properties->area = intval($value->properties->area);
+  // $value->properties->poblacion = intval($value->properties->poblacion);
 
   // Se ajusta escala para generar picos
   // $value->properties->densidad = $value->properties->densidad * 1000;
@@ -54,12 +56,22 @@ foreach ($data->features as $key => $value) {
     $max = $value->properties->poblacion;
   }
 
+  // Calculando valor maximo de densidad
+  if ($maxD < ($value->properties->poblacion / $value->properties->area)) {
+    $valueDensidadMaxima = $value;
+    $maxD = ($value->properties->poblacion / $value->properties->area);
+  }
+
   // Sumar Total
   $total = $total + $value->properties->densidad;
 }
 
 echo "VALOR MAXIMO<br /><br />";
 echo $max;
+echo "<br /><br />";
+
+echo "VALOR MAXIMO DENSIDAD<br /><br />";
+echo $maxD;
 echo "<br /><br />";
 
 echo "Calculando Cantidad de Datos = ", count($data->features), "<br /><br />";
