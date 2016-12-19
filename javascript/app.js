@@ -131,22 +131,29 @@ $(window).ready(function() {
     iniciarApp(data, varGlobal);
 
     function iniciarApp(data, varGlobal) {
+
         if (window.location.search !== "") {
-            console.log("Coordenadas enviadas por URL");
             data.coordenadas = [parseFloat(window.location.search.slice(1, window.location.search.length - 1).split(",")[0]), parseFloat(window.location.search.slice(1, window.location.search.length - 1).split(",")[1])];
             renderMap(data, varGlobal);
         } else {
+
+          if (navigator.geolocation) {
+
             navigator.geolocation.getCurrentPosition(function(position) {
+
                 if (position.coords.latitude == 0 && position.coords.longitude == 0) {
-                    console.log("Coordenadas por defecto");
                     data.coordenadas = [-58.5737501, -34.6156537];
+                    renderMap(data, varGlobal);
                 } else {
-                    console.log("Coordenadas geolocalizadas");
                     data.coordenadas = [position.coords.longitude, position.coords.latitude];
+                    renderMap(data, varGlobal);
                 }
-                renderMap(data, varGlobal);
+            }, function(error) {
+              data.coordenadas = [-58.5737501, -34.6156537];
+              renderMap(data, varGlobal);
             });
-        }
+          }
+      }
     }
     function renderMap(data, varGlobal) {
         // MapBox
