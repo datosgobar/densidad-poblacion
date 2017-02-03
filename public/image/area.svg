@@ -1,0 +1,10 @@
+<svg x="0px" y="0px" viewBox="0 0 9.6 10">
+	<polyline class="areaIconSvg" points="9.1,8 9.1,9.5 7.6,9.5" />
+	<line class="areaIconSvg" stroke-dasharray="1.8796,1.8796" x1="5.8" y1="9.5" x2="2.9" y2="9.5"/>
+	<polyline class="areaIconSvg" points="2,9.5 0.5,9.5 0.5,8" />
+	<line class="areaIconSvg" stroke-dasharray="1.9848,1.9848" x1="0.5" y1="6" x2="0.5" y2="3"/>
+	<polyline class="areaIconSvg" points="0.5,2 0.5,0.5 2,0.5" />
+	<line class="areaIconSvg" stroke-dasharray="1.8796,1.8796" x1="3.9" y1="0.5" x2="6.7" y2="0.5"/>
+	<polyline class="areaIconSvg" points="7.6,0.5 9.1,0.5 9.1,2" />
+	<line class="areaIconSvg" stroke-dasharray="1.9848,1.9848" x1="9.1" y1="4" x2="9.1" y2="7"/>
+</svg>

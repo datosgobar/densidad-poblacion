@@ -1,0 +1,19 @@
+<svg x="0px" y="0px" viewBox="0 0 170.9 27.4">
+	<text class="scale_text" style="font-size: 10px;" transform="matrix(1 0 0 1 0 24.1391)">0</text>
+	<text class="scale_text" style="font-size: 10px;" transform="matrix(1 0 0 1 145.8467 24.1391)">5.895</text>
+	<linearGradient id="linear-gradient" gradientUnits="userSpaceOnUse" x1="141.086" y1="473.5528" x2="274.3997" y2="473.5528" gradientTransform="matrix(1 0 0 1 -134.122 -452.6507)">
+		<stop  offset="1.000000e-02" style="stop-color:#FFFFFF"/>
+		<stop  offset="6.000000e-02" style="stop-color:#FEF3F1"/>
+		<stop  offset="0.14" style="stop-color:#FBD4CC"/>
+		<stop  offset="0.25" style="stop-color:#F6A191"/>
+		<stop  offset="0.39" style="stop-color:#F05C3F"/>
+		<stop  offset="0.44" style="stop-color:#EE4423"/>
+		<stop  offset="0.52" style="stop-color:#E04021"/>
+		<stop  offset="0.66" style="stop-color:#BB341B"/>
+		<stop  offset="0.86" style="stop-color:#802112"/>
+		<stop  offset="1" style="stop-color:#53130B"/>
+	</linearGradient>
+	<path style="fill: url('#linear-gradient');" d="M141,24.5H8c-0.2,0-0.3-0.1-0.3-0.3l0,0v-6.7c0-0.1,0.2-0.3,0.3-0.3l0,0h133l0,0V24.5L141,24.5z"/>
+	<text class="scale_text" transform="matrix(1 0 0 1 0 10.2979)">Cantidad de habitantes por km</text>
+	<text class="scale_text" transform="matrix(1 0 0 1 167 6.2979) scale(0.58)">2</text>
+</svg>
