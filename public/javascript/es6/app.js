@@ -174,6 +174,7 @@ $(window).ready(function() {
             });
 
             data.mapbox.on('load', function(d) {
+              $('.cargando').empty();
                 data.mapbox.addControl(new mapboxgl.NavigationControl({
                     position: 'bottom-right'
                 }));
@@ -228,28 +229,7 @@ $(window).ready(function() {
                     $('#tooltip').css({
                         "transform": "translate(" + (e.point.x + 10) + "px, " + (e.point.y + 10) + "px)"
                     }).show();
-                    $('#contentTooltip').empty().append(`<section>
-            <article>${ varGlobal.provincias['prov' + features[0].properties.prov_id].nombre }</article>
-            <article>
-              <svg x="0px" y="0px" viewBox="0 0 13.8 12.2">
-                <path fill="white" d="M13.8,12.2c-4.6,0-9.1,0-13.7,0c0-0.4-0.1-0.8-0.1-1.1c0-1.2,0.5-1.9,1.7-2.3c0.9-0.3,1.8-0.5,2.7-0.8c0.3-0.1,0.6-0.3,0.9-0.5c0.2-0.2,0.3-0.4,0-0.7C4.4,5.7,3.9,4.4,3.9,3C4,1.3,5.5-0.1,7,0C8.6,0.1,10,1.7,9.9,3.4C9.8,4.7,9.3,5.8,8.3,6.8C8.1,7,8.1,7.3,8.4,7.5c0.3,0.2,0.6,0.4,0.9,0.5c0.9,0.3,1.8,0.5,2.7,0.8c1.4,0.4,2,1.3,1.9,2.8C13.8,11.8,13.8,12,13.8,12.2z" />
-              </svg>
-              <span class="textWhite">${ new Intl.NumberFormat("de-DE").format(parseFloat(features[0].properties.poblacion).toFixed(0)) } &nbsp; </span>( ${ new Intl.NumberFormat("de-DE").format(parseFloat(features[0].properties.poblacion / features[0].properties.area).toFixed(0)) } ) / km<sup>2</sup>
-            </article>
-            <article>
-              <svg x="0px" y="0px" viewBox="0 0 9.6 10">
-                <polyline class="areaIconSvg" points="9.1,8 9.1,9.5 7.6,9.5" />
-                <line class="areaIconSvg" stroke-dasharray="1.8796,1.8796" x1="5.8" y1="9.5" x2="2.9" y2="9.5"/>
-                <polyline class="areaIconSvg" points="2,9.5 0.5,9.5 0.5,8" />
-                <line class="areaIconSvg" stroke-dasharray="1.9848,1.9848" x1="0.5" y1="6" x2="0.5" y2="3"/>
-                <polyline class="areaIconSvg" points="0.5,2 0.5,0.5 2,0.5" />
-                <line class="areaIconSvg" stroke-dasharray="1.8796,1.8796" x1="3.9" y1="0.5" x2="6.7" y2="0.5"/>
-                <polyline class="areaIconSvg" points="7.6,0.5 9.1,0.5 9.1,2" />
-                <line class="areaIconSvg" stroke-dasharray="1.9848,1.9848" x1="9.1" y1="4" x2="9.1" y2="7"/>
-              </svg>
-              <span class="textWhite">${ new Intl.NumberFormat("de-DE").format(parseFloat(features[0].properties.area).toFixed(3)) } km<sup>2</sup></span>
-            </article>
-          </section>`);
+                    $('#contentTooltip').empty().append(`<section><article>${ varGlobal.provincias['prov' + features[0].properties.prov_id].nombre }</article><article><svg x="0px" y="0px" viewBox="0 0 13.8 12.2"><path fill="white" d="M13.8,12.2c-4.6,0-9.1,0-13.7,0c0-0.4-0.1-0.8-0.1-1.1c0-1.2,0.5-1.9,1.7-2.3c0.9-0.3,1.8-0.5,2.7-0.8c0.3-0.1,0.6-0.3,0.9-0.5c0.2-0.2,0.3-0.4,0-0.7C4.4,5.7,3.9,4.4,3.9,3C4,1.3,5.5-0.1,7,0C8.6,0.1,10,1.7,9.9,3.4C9.8,4.7,9.3,5.8,8.3,6.8C8.1,7,8.1,7.3,8.4,7.5c0.3,0.2,0.6,0.4,0.9,0.5c0.9,0.3,1.8,0.5,2.7,0.8c1.4,0.4,2,1.3,1.9,2.8C13.8,11.8,13.8,12,13.8,12.2z" /></svg><span class="textWhite">${ new Intl.NumberFormat("de-DE").format(parseFloat(features[0].properties.poblacion).toFixed(0)) } &nbsp; </span>( ${ new Intl.NumberFormat("de-DE").format(parseFloat(features[0].properties.poblacion / features[0].properties.area).toFixed(0)) } ) / km<sup>2</sup></article><article><svg x="0px" y="0px" viewBox="0 0 9.6 10"><polyline class="areaIconSvg" points="9.1,8 9.1,9.5 7.6,9.5" /><line class="areaIconSvg" stroke-dasharray="1.8796,1.8796" x1="5.8" y1="9.5" x2="2.9" y2="9.5"/><polyline class="areaIconSvg" points="2,9.5 0.5,9.5 0.5,8" /><line class="areaIconSvg" stroke-dasharray="1.9848,1.9848" x1="0.5" y1="6" x2="0.5" y2="3"/><polyline class="areaIconSvg" points="0.5,2 0.5,0.5 2,0.5" /><line class="areaIconSvg" stroke-dasharray="1.8796,1.8796" x1="3.9" y1="0.5" x2="6.7" y2="0.5"/><polyline class="areaIconSvg" points="7.6,0.5 9.1,0.5 9.1,2" /><line class="areaIconSvg" stroke-dasharray="1.9848,1.9848" x1="9.1" y1="4" x2="9.1" y2="7"/></svg><span class="textWhite">${ new Intl.NumberFormat("de-DE").format(parseFloat(features[0].properties.area).toFixed(3)) } km<sup>2</sup></span></article></section>`);
 
                     // Cuando se pasa el mouse por una provincia en el mapa, se pinta la provincia en el miniMapa.
                     var selector = '#' + data.generarReferenciaId(varGlobal.provincias['prov' + features[0].properties.prov_id].nombre);
@@ -396,7 +376,6 @@ $(window).ready(function() {
                     switch (hash) {
                         case "#inicio":
                             $("#explorar").hide();
-                            $("#compartir").hide();
                             $("#acercaDe").hide();
                             $(".accent_button").removeAttr("class");
                             $('.header_mobile').children().eq(0).removeAttr().attr("class", "accent_button");
@@ -406,7 +385,6 @@ $(window).ready(function() {
                             break;
                         case "#explorar":
                             $("#inicio").hide();
-                            $("#compartir").hide();
                             $("#acercaDe").hide();
                             $(".accent_button").removeAttr("class");
                             $('.header_mobile').children().eq(1).removeAttr().attr("class", "accent_button");
@@ -427,7 +405,6 @@ $(window).ready(function() {
                         case "#acercaDe":
                             $("#inicio").hide();
                             $("#explorar").hide();
-                            $("#compartir").hide();
                             $(".accent_button").removeAttr("class");
                             $('.header_mobile').children().eq(3).removeAttr().attr("class", "accent_button");
                             if ($("body").outerWidth() < 768) {
@@ -436,7 +413,6 @@ $(window).ready(function() {
                             break;
                         default:
                             $("#explorar").hide();
-                            $("#compartir").hide();
                             $("#acercaDe").hide();
                             $(".accent_button").removeAttr("class");
                             $('.header_mobile').children().eq(0).removeAttr().attr("class", "accent_button");
@@ -458,13 +434,12 @@ $(window).ready(function() {
 
                     if ($("body").outerWidth() > 768) {
 
-                        $('.header_map').removeAttr('style');
-                        $('#compartir').removeAttr('style');
-                        $('#acercaDe').removeAttr('style');
+                        $('.header_map').show();
+
                         $(".header_mobile").children().first().click();
+
                         $("#inicio").hide();
                         $("#explorar").hide();
-                        $("#compartir").hide();
                         $("#acercaDe").hide();
 
                         calcularPosicionPanelIzquierdo();
@@ -475,6 +450,8 @@ $(window).ready(function() {
                         if (tempSize == false) {
                             window.location.hash = "#explorar";
                         }
+
+                        $('.header_map').hide();
 
                         $("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left").removeAttr('style');
                         $("#button_pannel").removeAttr('style');
@@ -487,15 +464,15 @@ $(window).ready(function() {
                 function calcularPosicionPanelIzquierdo() {
                     // Buscador, Boton, Panel
                     $("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left").css({
-                        "padding-top": $(".header_app").outerHeight() + 20
+                        "padding-top": $("body > header").outerHeight() + 20
                     });
                     $("#button_pannel").css({
                         "display": "flex",
-                        "top": $(".header_app").outerHeight() + 20
+                        "top": $("body > header").outerHeight() + 20
                     });
                     $("#container_panel").css({
                         "display": "block",
-                        "top": $(".header_app").outerHeight() + 19
+                        "top": $("body > header").outerHeight() + 19
                     });
                 }
 
