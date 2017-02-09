@@ -392,21 +392,11 @@ $(window).ready(function() {
                                 $(hash).attr("style", "display: flex;");
                             }
                             break;
-                        case "#compartir":
-                            $("#inicio").hide();
-                            $("#explorar").hide();
-                            $("#acercaDe").hide();
-                            $(".accent_button").removeAttr("class");
-                            $('.header_mobile').children().eq(2).removeAttr().attr("class", "accent_button");
-                            if ($("body").outerWidth() < 768) {
-                                $(hash).attr("style", "display: flex;");
-                            }
-                            break;
                         case "#acercaDe":
                             $("#inicio").hide();
                             $("#explorar").hide();
                             $(".accent_button").removeAttr("class");
-                            $('.header_mobile').children().eq(3).removeAttr().attr("class", "accent_button");
+                            $('.header_mobile').children().eq(2).removeAttr().attr("class", "accent_button");
                             if ($("body").outerWidth() < 768) {
                                 $(hash).attr("style", "display: flex;");
                             }
