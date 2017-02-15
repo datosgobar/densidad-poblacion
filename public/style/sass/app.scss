@@ -1,281 +1,140 @@
-// Import Roboto
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 100;
-    src: local('Roboto Thin'), local('Roboto-Thin'), url("https://fonts.gstatic.com/s/roboto/v15/2tsd397wLxj96qwHyNIkxHYhjbSpvc47ee6xR_80Hnw.woff2") format('woff2');
+@import "start";
+
+/* Variables*/
+$primary_color: white;
+$light_color: darken($primary_color, 50%);
+$dark_color: darken($light_color, 50%);
+$accent_color: #0695d6;
+$icon_text: white;
+
+%header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
 }
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Roboto Light'), local('Roboto-Light'), url("https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2") format('woff2');
+
+
+#productName {
+  position: absolute;
+  top: 72px;
+  width: 100%;
+  z-index: 700;
+  background-color: white;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0px;
+
+  .header_desktop {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+    }
+    .h2 {
+      margin: 0;
+      color: $dark_color;
+      font-size: 1.5rem;
+      font-weight: 400;
+      padding: 15px 0px;
+
+      @media screen and (min-width: 768px) {
+          font-size: 1.7rem;
+      }
+      @media screen and (min-width: 900px) {
+          font-size: 2rem;
+      }
+      @media screen and (min-width: 1280px) {
+          font-size: 2.5rem;
+        }
+    }
+    .h3 {
+      margin: 0 0 0 20px;
+      padding: 0 10px;
+      color: $light_color;
+      border-left: 1px solid silver;
+      font-size: 1rem;
+      font-weight: 400;
+      display: none;
+
+      @media screen and (min-width: 768px) {
+          font-size: 0.9rem;
+          display: inherit;
+      }
+      @media screen and (min-width: 900px) {
+          font-size: 1rem;
+      }
+      @media screen and (min-width: 1280px) {
+          font-size: 1.25rem;
+      }
+    }
+    & > a {
+        color: #0695d6;
+        text-decoration: none;
+        padding-right: 10px;
+
+        &:hover {
+          color: #17b2f8;
+        }
+      }
+  }
+  .header_mobile {
+      @extend %header;
+      z-index: 30;
+      height: 40px;
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+
+      @media screen and (min-width: 768px) {
+          display: none;
+      }
+
+      & > button {
+          height: 100%;
+          margin: 0;
+          padding: 0 10px;
+          cursor: pointer;
+          color: $light_color;
+          border: 0;
+          background-color: transparent;
+          text-transform: uppercase;
+          font-size: 13px;
+          width: 33%;
+          border-bottom: 3px solid white;
+          border-radius: 0;
+      }
+
+      .accent_button {
+          color: $accent_color;
+          font-weight: 500;
+          border-bottom: 3px solid $accent_color;
+          border-radius: 0;
+      }
+  }
 }
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'), url("https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Roboto Medium'), local('Roboto-Medium'), url("https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUZBw1xU1rKptJj_0jans920.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Roboto Bold'), local('Roboto-Bold'), url("https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOJBw1xU1rKptJj_0jans920.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 900;
-    src: local('Roboto Black'), local('Roboto-Black'), url("https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIpBw1xU1rKptJj_0jans920.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 100;
-    src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url("https://fonts.gstatic.com/s/roboto/v15/12mE4jfMSBTmg-81EiS-YQzyDMXhdD8sAj6OAJTFsBI.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 300;
-    src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url("https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at4gp9Q8gbYrhqGlRav_IXfk.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 400;
-    src: local('Roboto Italic'), local('Roboto-Italic'), url("https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByXYhjbSpvc47ee6xR_80Hnw.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 500;
-    src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url("https://fonts.gstatic.com/s/roboto/v15/OLffGBTaF0XFOW1gnuHF0Ygp9Q8gbYrhqGlRav_IXfk.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 700;
-    src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url("https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC4gp9Q8gbYrhqGlRav_IXfk.woff2") format('woff2');
-}
-@font-face {
-    font-family: 'Roboto';
-    font-style: italic;
-    font-weight: 900;
-    src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url("https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpYgp9Q8gbYrhqGlRav_IXfk.woff2") format('woff2');
-}
-// Core variables and mixins
-@import "variables";
-@import "bootstrap/mixins";
-// Reset and dependencies
-@import "normalize";
-@import "bootstrap/print";
-@import "bootstrap/glyphicons";
-// Import Bootstrap
-@import "bootstrap";
-// Responsive Rules
-$small: 768px;
-$medium: 992px;
-$large: 1200px;
-// Text
-$color-font: rgba(77, 77, 77, 1);
-$white-font: rgba(255, 255, 255, 1);
-$black-font: rgba(0, 0, 0, 1);
-// Links
-a:focus {
-    @include tab-focus;
-}
+
 // Header and Footer
 $navHeight: 72px;
-$footerHeight: 265px;
-$gobar_color_dark: #0695d6;
-$gobar_color_ligth: #17b2f8;
 
-.link_gob {
-    color: $gobar_color_dark;
-    text-decoration: none;
-
-    &:focus,
-    &:hover {
-        color: $gobar_color_ligth;
-    }
-}
-
-body > header {
-    background-color: white;
-    box-sizing: border-box;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-
-    #gobar {
-        height: $navHeight;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
-
-        & > div {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row;
-
-            .redes {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                flex-direction: row;
-                margin-left: 20px;
-
-                & > span {
-                    display: none;
-                    color: $gobar_color_dark;
-                    font-size: 17px;
-                    padding: 0 10px;
-                    font-weight: 500;
-                    @media (min-width: $small) {
-                        display: inherit;
-                    }
-                }
-
-                & > a {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: row;
-                    text-decoration: none;
-                    color: $gobar_color_dark;
-                    background-color: transparent;
-                    padding: 0 10px;
-                    font-size: responsive 12px 16px;
-                    height: $navHeight;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: $gobar_color_dark;
-                        color: white;
-                    }
-                }
-            }
-        }
-    }
-    #productName {
-        & > div {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row;
-
-            h2 {
-                font-size: responsive 20px 22px;
-                text-align: center;
-                margin: 20px 0;
-            }
-        }
-    }
-}
-
-body > footer {
-    box-sizing: border-box;
-    z-index: 900;
-    width: 100%;
-
-    #sobre_nosotros {
-        height: $footerHeight;
-        background-color: white;
-        box-shadow: 0 -2px 4px 0 rgba(220, 220, 220, 0.5);
-
-        & > div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            @media (min-width: $small) {
-                justify-content: space-between;
-            }
-        }
-
-        #institucional {
-            .social_icons {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: row;
-                margin-bottom: 10px;
-                @media (min-width: $small) {
-                    justify-content: flex-start;
-                }
-
-                & > a {
-                    color: $gobar_color_dark;
-                    background-color: transparent;
-                    padding: 10px;
-                    width: 50px;
-                    height: 50px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: row;
-                    border-radius: 3px;
-                    text-decoration: none;
-
-                    &:hover {
-                        color: white;
-                        background-color: $gobar_color_dark;
-                    }
-                }
-            }
-        }
-
-        #contacto {
-            display: none;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            @media (min-width: $small) {
-                display: flex;
-            }
-
-            & > a {
-                font-size: 16px;
-                font-weight: 500;
-                color: $gobar_color_dark;
-                text-decoration: none;
-
-                &:hover {
-                    color: #17b2f8;
-                }
-
-                &:nth-child(2) {
-                    margin-top: 10px;
-                }
-            }
-        }
-    }
-
-    #colaboradores {
-        background-color: #F2F2F2;
-        padding: $navHeight 0;
-
-        p {
-            font-size: responsive 12px 14px;
-            color: $color-font;
-            text-align: center;
-            line-height: 22px;
-        }
-    }
-}
-// Logo
-.logo_gobar {
-    min-width: 150px;
-    width: 100%;
-    max-width: 265px;
-}
 .cargando {
   display: flex;
   justify-content: center;
@@ -288,10 +147,20 @@ body > footer {
 }
 .containerBody {
   height: 100%;
-  padding-top: 112px;
+  padding-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+      padding-top: 126px;
+  }
+  @media screen and (min-width: 900px) {
+      padding-top: 130px;
+  }
+  @media screen and (min-width: 1280px) {
+      padding-top: 140px;
+  }
 }
 
 // Contenedor con margenes ajustables
@@ -300,30 +169,13 @@ body > footer {
     margin: 0 auto;
     padding: 0 15px;
     height: 100%;
+
     @media screen and (min-width: 768px) {
         width: 750px;
     }
     @media screen and (min-width: 992px) {
         width: 970px;
     }
-}
-/* Variables*/
-$primary_color: white;
-$light_color: darken($primary_color, 50%);
-$dark_color: darken($light_color, 50%);
-$accent_color: #0695d6;
-$icon_text: white;
-/* Extends */
-%header {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    background-color: white;
-    align-items: center;
-    justify-content: space-between;
 }
 
 %content {
@@ -724,9 +576,20 @@ $line_height: 1.5;
 /* Mapa */
 #map {
     @extend %content;
+    padding-top: 112px;
     height: 100%;
     box-sizing: border-box;
     left: 0px;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 126px;
+    }
+    @media screen and (min-width: 900px) {
+        padding-top: 130px;
+    }
+    @media screen and (min-width: 1280px) {
+        padding-top: 140px;
+    }
 }
 
 #escala {

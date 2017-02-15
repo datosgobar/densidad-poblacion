@@ -387,21 +387,11 @@ $(window).ready(function () {
                                 $(hash).attr("style", "display: flex;");
                             }
                             break;
-                        case "#compartir":
-                            $("#inicio").hide();
-                            $("#explorar").hide();
-                            $("#acercaDe").hide();
-                            $(".accent_button").removeAttr("class");
-                            $('.header_mobile').children().eq(2).removeAttr().attr("class", "accent_button");
-                            if ($("body").outerWidth() < 768) {
-                                $(hash).attr("style", "display: flex;");
-                            }
-                            break;
                         case "#acercaDe":
                             $("#inicio").hide();
                             $("#explorar").hide();
                             $(".accent_button").removeAttr("class");
-                            $('.header_mobile').children().eq(3).removeAttr().attr("class", "accent_button");
+                            $('.header_mobile').children().eq(2).removeAttr().attr("class", "accent_button");
                             if ($("body").outerWidth() < 768) {
                                 $(hash).attr("style", "display: flex;");
                             }
@@ -447,7 +437,7 @@ $(window).ready(function () {
 
                         $('.header_map').hide();
 
-                        $("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left").removeAttr('style');
+                        // $("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left").removeAttr('style');
                         $("#button_pannel").removeAttr('style');
                         $("#container_panel").removeAttr('style');
 
@@ -457,16 +447,16 @@ $(window).ready(function () {
 
                 function calcularPosicionPanelIzquierdo() {
                     // Buscador, Boton, Panel
-                    $("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left").css({
-                        "padding-top": $("body > header").outerHeight() + 20
-                    });
+                    // $("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left").css({
+                    //     "padding-top": $("#header").outerHeight() + $("#productName").outerHeight() + 20
+                    // });
                     $("#button_pannel").css({
                         "display": "flex",
-                        "top": $("body > header").outerHeight() + 20
+                        "top": $("#header").outerHeight() + $("#productName").outerHeight() + 20
                     });
                     $("#container_panel").css({
                         "display": "block",
-                        "top": $("body > header").outerHeight() + 19
+                        "top": $("#header").outerHeight() + $("#productName").outerHeight() + 19
                     });
                 }
 

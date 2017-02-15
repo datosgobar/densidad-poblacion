@@ -1,0 +1,403 @@
+//  Importar tippgrafía Roboto
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 100;
+        src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v15/2tsd397wLxj96qwHyNIkxHYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v15/RxZJdnzeo3R5zSexge8UUZBw1xU1rKptJj_0jans920.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v15/d-6IYplOFocCacKzxwXSOJBw1xU1rKptJj_0jans920.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v15/mnpfi9pxYH-Go5UiibESIpBw1xU1rKptJj_0jans920.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 100;
+        src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v15/12mE4jfMSBTmg-81EiS-YQzyDMXhdD8sAj6OAJTFsBI.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 300;
+        src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v15/7m8l7TlFO-S3VkhHuR0at4gp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v15/vPcynSL0qHq_6dX7lKVByXYhjbSpvc47ee6xR_80Hnw.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v15/OLffGBTaF0XFOW1gnuHF0Ygp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 700;
+        src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'), url(https://fonts.gstatic.com/s/roboto/v15/t6Nd4cfPRhZP44Q5QAjcC4gp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+    }
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 900;
+        src: local('Roboto Black Italic'), local('Roboto-BlackItalic'), url(https://fonts.gstatic.com/s/roboto/v15/bmC0pGMXrhphrZJmniIZpYgp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
+    }
+
+//  Normalización
+    @import "variables";
+    @import "clases";
+    @import "normalize";
+
+//  Header, Footer and Content
+    body {
+      position: relative;
+      padding-bottom: 230px;
+      height: auto;
+    }
+    @media (min-width: $small) {
+      body {
+        padding-top: 72px;
+      }
+    }
+    #header {
+        background: white;
+        padding: 0;
+        -o-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+        position: relative;
+        white-space: nowrap;
+        z-index: 900;
+    }
+    @media (min-width: $small) {
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    }
+    #header #header-spacing {
+        padding: 0 20px;
+    }
+    #header #header-spacing .header-links,
+    #header #header-spacing .logo-header {
+        height: 72px;
+        font-size: 18px;
+        line-height: 4;
+    }
+    #header #header-spacing .header-links svg.edit-svg path,
+    #header #header-spacing .logo-header svg.edit-svg path {
+        fill: #999999;
+    }
+    #header #header-spacing .header-links {
+        display: none;
+        text-align: right;
+    }
+    @media (min-width: $small) {
+        #header #header-spacing .header-links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-direction: row;
+        }
+    }
+    #header #header-spacing .header-links .header-link {
+        color: #0695d6;
+        margin: 0;
+        padding: 0 0.3em;
+        line-height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        height: 100%;
+        cursor: pointer;
+    }
+    @media (min-width: $small) {
+        #header #header-spacing .header-links .header-link.active,
+        #header #header-spacing .header-links .header-link:hover {
+            background: #0695d6;
+            color: white;
+        }
+    }
+    .header-span-link {
+      color: #0695d6;
+      font-size: 17px;
+      padding: 0 10px;
+      font-weight: 500;
+    }
+    @media (min-width: $medium) {
+        #header #header-spacing .header-links .header-link {
+            padding: 0 0.5em;
+            font-size: 100%;
+        }
+    }
+    #header #header-spacing .header-links .header-link.dropdown {
+        position: relative;
+    }
+    #header #header-spacing .header-links .header-link.dropdown .caret {
+        margin-bottom: 8px;
+    }
+    #header #header-spacing .header-links .header-link.dropdown ul {
+        margin: 0;
+        display: none;
+        position: absolute;
+        right: 0;
+        width: 250px;
+        background-color: #0695d6;
+        color: white;
+        list-style-type: none;
+        text-align: left;
+        bottom: -160px;
+        -o-box-shadow: 0 5px 14px -4px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 5px 14px -4px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow: 0 5px 14px -4px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 5px 14px -4px rgba(0, 0, 0, 0.5);
+    }
+    #header #header-spacing .header-links .header-link.dropdown ul a li {
+        height: 40px;
+        line-height: 26px;
+        padding: 7px 14px;
+        color: white;
+    }
+    #header #header-spacing .header-links .header-link.dropdown ul a li:hover {
+        background: #17b2f8;
+    }
+    #header #header-spacing .header-links .header-link.dropdown.active ul {
+        display: block;
+    }
+    #header #header-spacing .logo-header.showing-nav {
+        height: auto;
+    }
+    #header #header-spacing .logo-header .logo-and-xs-icon {
+        position: relative;
+        padding-left: 50px;
+    }
+    @media (min-width: $small) {
+        #header #header-spacing .logo-header .logo-and-xs-icon {
+            padding-left: 0;
+        }
+    }
+    #header #header-spacing .logo-header .icon-reorder {
+        position: absolute;
+        font-size: 30px;
+        top: 50%;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        margin-top: -20px;
+        border: none;
+        -o-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        color: #0695d6;
+    }
+    #header #header-spacing .logo-header .icon-reorder.active,
+    #header #header-spacing .logo-header .icon-reorder:hover {
+        color: white;
+        background: #0695d6;
+    }
+    @media (min-width: $small) {
+        #header #header-spacing .logo-header .icon-reorder {
+            display: none;
+        }
+    }
+    #header #header-spacing .logo-header .xs-navbar {
+        padding-bottom: 10px;
+    }
+    @media (min-width: $small) {
+        #header #header-spacing .logo-header .xs-navbar {
+            display: none;
+        }
+    }
+    #header #header-spacing .logo-header .xs-navbar .navbar-link {
+        line-height: initial;
+        padding: 10px;
+        color: #0695d6;
+    }
+    #header #header-spacing .logo-header .xs-navbar .navbar-link:hover {
+        background: #0695d6;
+        color: white;
+        cursor: pointer;
+    }
+    #header #header-spacing .logo-header .xs-navbar .navbar-link:hover a {
+        color: white;
+    }
+    #header #header-spacing .logo-header .xs-navbar .dropdown-navbar .navbar-link {
+        padding-left: 15px;
+    }
+    #header #header-spacing .logo-header .logo-ministerio {
+        height: 100%;
+        width: 300px;
+        max-width: 100%;
+    }
+    #content {
+      width: 100%;
+    }
+    #footer {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    #footer p {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    #footer {
+        padding: 0;
+        background: white;
+        bottom: 0;
+        height: 230px;
+        width: 100%;
+        z-index: 10;
+        -o-box-shadow: 0 -2px 4px 0 rgba(220, 220, 220, 0.5);
+        -moz-box-shadow: 0 -2px 4px 0 rgba(220, 220, 220, 0.5);
+        -webkit-box-shadow: 0 -2px 4px 0 rgba(220, 220, 220, 0.5);
+        box-shadow: 0 -2px 4px 0 rgba(220, 220, 220, 0.5);
+    }
+    #footer #footer-spacer {
+        padding: 20px 0;
+    }
+    @media (min-width: $small) {
+        #footer #footer-spacer {
+            padding: 50px 0;
+        }
+    }
+    #footer #footer-spacer .footer-section {
+        color: #0695d6;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+    }
+    #footer #footer-spacer .footer-section.logo img {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    #footer #footer-spacer .footer-section.logo a.social-link {
+        display: inline-block;
+        -o-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 8px;
+        text-align: center;
+        width: 46px;
+        height: 46px;
+    }
+    #footer #footer-spacer .footer-section.logo a.social-link i {
+        display: inline-block;
+        font-size: 28px;
+    }
+    #footer #footer-spacer .footer-section.logo a.social-link:hover {
+        background: #0695d6;
+        color: white;
+    }
+    #footer #footer-spacer .footer-section.links-internos a:hover {
+        color: #17b2f8;
+    }
+    #footer #footer-spacer .footer-section.links-externos a.ckan-anchor {
+        display: inline-block;
+        text-align: left;
+    }
+    #footer #footer-spacer .footer-section.links-externos .ckan-link {
+        margin: 0;
+        color: #767676;
+    }
+    #footer #footer-spacer .footer-section.links-externos .ckan-name {
+        color: #0695d6;
+    }
+    #footer #footer-spacer .footer-section.links-externos .ckan-name:hover {
+        color: #17b2f8;
+    }
+    @media (min-width: $small) {
+        #footer #footer-spacer .footer-section {
+            text-align: left;
+        }
+    }
+    .no-padding {
+      padding: 0;
+    }
+    .restricted-max-width {
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      .restricted-max-width {
+        max-width: 550px;
+        margin: auto;
+      }
+      .restricted-max-width:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+      }
+    }
+    @media (min-width: 768px) {
+      .restricted-max-width {
+        max-width: 750px;
+        margin: auto;
+      }
+      .restricted-max-width:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+      }
+    }
+    @media (min-width: 992px) {
+      .restricted-max-width {
+        max-width: 750px;
+        margin: auto;
+      }
+      .restricted-max-width:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+      }
+    }
+    @media (min-width: 1200px) {
+      .restricted-max-width {
+        max-width: 1200px;
+        margin: auto;
+      }
+      .restricted-max-width:after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+      }
+    }

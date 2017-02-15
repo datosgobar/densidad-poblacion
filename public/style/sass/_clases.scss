@@ -1,0 +1,75 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.flex_column {
+    flex-direction: column;
+}
+
+.flex_h_between {
+    justify-content: space-between;
+}
+
+.flex_h_around {
+    justify-content: space-around;
+}
+
+.flex_h_start {
+    justify-content: flex-start;
+}
+
+.flex_h_end {
+    justify-content: flex-end;
+}
+
+.flex_v_between {
+    align-items: space-between;
+}
+
+.flex_v_around {
+    align-items: space-around;
+}
+
+.flex_v_start {
+    align-items: flex-start;
+}
+
+.flex_v_end {
+    align-items: flex-end;
+}
+
+.containerResponsive {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+    @media screen and (min-width: 768px) {
+        width: 750px;
+    }
+    @media screen and (min-width: 992px) {
+        width: 970px;
+    }
+}
+
+.link_gob {
+    color: $gobar_color_dark;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+        color: $gobar_color_ligth;
+    }
+}
+
+.logo_gobar {
+    min-width: 150px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.hide {
+    display: none;
+}
