@@ -26,12 +26,16 @@ $icon_text: white;
   width: 100%;
   z-index: 700;
   background-color: white;
-  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
+  // box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   padding: 0px;
+
+  @media screen and (min-width: 768px) {
+      height: 72px;
+  }
 
   .header_desktop {
     display: none;
@@ -53,43 +57,46 @@ $icon_text: white;
       margin: 0;
       color: $dark_color;
       font-size: 1.5rem;
-      font-weight: 400;
+      font-weight: 500;
       padding: 15px 0px;
+      text-transform: uppercase;
+      color: #767676;
 
       @media screen and (min-width: 768px) {
-          font-size: 1.7rem;
+          font-size: 1.65rem;
       }
       @media screen and (min-width: 900px) {
-          font-size: 2rem;
+          font-size: 1.85rem;
       }
       @media screen and (min-width: 1280px) {
-          font-size: 2.5rem;
+          font-size: 2rem;
         }
     }
     .h3 {
       margin: 0 0 0 20px;
       padding: 0 10px;
-      color: $light_color;
+      color: #767676;
       border-left: 1px solid silver;
-      font-size: 1rem;
-      font-weight: 400;
+      font-size: 1.5rem;
+      font-weight: 300;
       display: none;
 
       @media screen and (min-width: 768px) {
-          font-size: 0.9rem;
+          font-size: 1.65rem;
           display: inherit;
       }
       @media screen and (min-width: 900px) {
-          font-size: 1rem;
+          font-size: 1.85rem;
       }
       @media screen and (min-width: 1280px) {
-          font-size: 1.25rem;
+          font-size: 2rem;
       }
     }
     & > a {
         color: #0695d6;
         text-decoration: none;
         padding-right: 10px;
+        font-size: 17px;
 
         &:hover {
           color: #17b2f8;
@@ -116,7 +123,7 @@ $icon_text: white;
           color: $light_color;
           border: 0;
           background-color: transparent;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           font-size: 13px;
           width: 33%;
           border-bottom: 3px solid white;
@@ -159,7 +166,7 @@ $navHeight: 72px;
       padding-top: 130px;
   }
   @media screen and (min-width: 1280px) {
-      padding-top: 140px;
+      padding-top: 144px;
   }
 }
 
@@ -372,7 +379,7 @@ html {
         color: $light_color;
         border: 0;
         background-color: transparent;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-size: 13px;
         width: 33%;
         border-bottom: 3px solid white;
@@ -520,9 +527,12 @@ $line_height: 1.5;
 }
 /* Tooltip */
 #tooltip {
-    position: relative;
-    z-index: 50;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 999999;
     display: none;
+    opacity: 1;
     margin: 0;
     padding: 0;
     color: $primary_color;
@@ -536,7 +546,7 @@ $line_height: 1.5;
 }
 
 #contentTooltip {
-    position: absolute;
+    position: relative;
     top: 10px;
     left: 10px;
     margin: 0;
@@ -588,7 +598,7 @@ $line_height: 1.5;
         padding-top: 130px;
     }
     @media screen and (min-width: 1280px) {
-        padding-top: 140px;
+        padding-top: 144px;
     }
 }
 
@@ -605,7 +615,7 @@ $line_height: 1.5;
     }
 
     & > svg {
-        width: 150px;
+        width: 185px;
     }
 }
 /* Buscador */
@@ -700,16 +710,16 @@ $line_height: 1.5;
         align-items: center;
 
         & > h3 {
-            text-transform: uppercase;
-            line-height: 1.25;
+            // text-transform: uppercase;
+            line-height: 1.3;
             display: flex;
             flex-direction: row;
             box-sizing: border-box;
             width: 100%;
             margin: 20px 0 10px;
             padding: 0 20px;
-            color: $dark_color;
-            font-size: 1rem;
+            color: #767676;
+            font-size: 1.2rem;
             font-weight: 400;
             justify-content: center;
             align-items: center;
@@ -790,6 +800,10 @@ sup {
     vertical-align: text-top;
     font-size: smaller;
 }
+.sup {
+    vertical-align: text-top;
+    font-size: x-small;
+}
 /* MapBox Escala*/
 .mapboxgl-ctrl-bottom-left {
     right: 50px;
@@ -853,4 +867,22 @@ sup {
             color: black;
         }
     }
+}
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl input {
+  font-size: 16px !important;
+  color: #767676 !important;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #0695d6;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
