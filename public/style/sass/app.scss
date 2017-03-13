@@ -519,9 +519,16 @@ $line_height: 1.5;
         margin: 40px 0 0;
         font-weight: 400;
 
+        a {
+          color: white;
+        }
+
         &:hover {
             background-color: white;
-            color: $light_color;
+
+            a {
+              color: $light_color;
+            }
         }
     }
 }
