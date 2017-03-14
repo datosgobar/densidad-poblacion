@@ -145,7 +145,6 @@ $(window).ready(function() {
       }
 
     function renderMap(data, varGlobal) {
-      console.log(data.coordenadas);
       // MapBox
       mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbWxvcGV6IiwiYSI6ImNpdWhrYWdvNjAwdjYzcHFmaDl1YTQyOTYifQ.g62pBFWJnDt8vIiHQ5HM8A';
       if (!mapboxgl.supported()) {
