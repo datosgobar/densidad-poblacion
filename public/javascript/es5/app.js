@@ -126,30 +126,17 @@ $(window).ready(function () {
 
     function iniciarApp(data, varGlobal) {
 
-        if (window.location.search !== "") {
-            data.coordenadas = [parseFloat(window.location.search.slice(1, window.location.search.length - 1).split(",")[0]), parseFloat(window.location.search.slice(1, window.location.search.length - 1).split(",")[1])];
-            renderMap(data, varGlobal);
+        if (window.location.search !== '') {
+            data.coordenadas = [parseFloat(window.location.search.slice(1, window.location.search.length - 1).split(',')[0]), parseFloat(window.location.search.slice(1, window.location.search.length - 1).split(',')[1])];
         } else {
-
-            if (navigator.geolocation) {
-
-                navigator.geolocation.getCurrentPosition(function (position) {
-
-                    if (position.coords.latitude == 0 && position.coords.longitude == 0) {
-                        data.coordenadas = [-58.5737501, -34.6156537];
-                        renderMap(data, varGlobal);
-                    } else {
-                        data.coordenadas = [position.coords.longitude, position.coords.latitude];
-                        renderMap(data, varGlobal);
-                    }
-                }, function (error) {
-                    data.coordenadas = [-58.5737501, -34.6156537];
-                    renderMap(data, varGlobal);
-                });
-            }
+            data.coordenadas = [-58.5737501, -34.6156537];
         }
+
+        renderMap(data, varGlobal);
     }
+
     function renderMap(data, varGlobal) {
+        console.log(data.coordenadas);
         // MapBox
         mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbWxvcGV6IiwiYSI6ImNpdWhrYWdvNjAwdjYzcHFmaDl1YTQyOTYifQ.g62pBFWJnDt8vIiHQ5HM8A';
         if (!mapboxgl.supported()) {
@@ -166,6 +153,15 @@ $(window).ready(function () {
                 bearing: 0,
                 maxBounds: [-72.9, -54.9, -53.6, -21.9]
             });
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+
+                    if (position.coords.latitude != 0 && position.coords.longitude != 0) {
+                        data.mapbox.flyTo({ center: [position.coords.longitude, position.coords.latitude] });
+                    }
+                }, function (error) {}, { enableHighAccuracy: true, timeout: 5000 });
+            }
 
             data.mapbox.on('load', function (d) {
                 $('.cargando').empty();
@@ -190,7 +186,7 @@ $(window).ready(function () {
                     'property': 'densidad',
                     'type': 'identity'
                 });
-                data.mapbox.addSource("Argentina-Hover", {
+                data.mapbox.addSource('Argentina-Hover', {
                     'type': 'geojson',
                     'data': varGlobal.datosHover
                 });
@@ -198,7 +194,7 @@ $(window).ready(function () {
                     'id': 'color-hover',
                     'source': 'Argentina-Hover',
                     'type': 'fill',
-                    "paint": {
+                    'paint': {
                         'fill-color': 'black',
                         'fill-extrude-height': {
                             'property': 'densidad',
