@@ -408,7 +408,7 @@ $(window).ready(function() {
                   }
               }
 
-              if ($("body").outerWidth() > 768) {
+              if ($("body").outerWidth() >= 768) {
                   calcularPosicionPanelIzquierdo();
               } else {
 
