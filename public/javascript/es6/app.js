@@ -440,8 +440,8 @@ $(window).ready(function() {
                       $('.header_map').hide();
 
                       // $("#map > div.mapboxgl-control-container > div.mapboxgl-ctrl-top-left").removeAttr('style');
-                      $("#button_pannel").removeAttr('style');
-                      $("#container_panel").removeAttr('style');
+                      // $("#button_pannel").removeAttr('style');
+                      // $("#container_panel").removeAttr('style');
 
                       tempSize = true;
                   }
@@ -453,11 +453,11 @@ $(window).ready(function() {
                   //     "padding-top": $("#header").outerHeight() + $("#productName").outerHeight() + 20
                   // });
                   $("#button_pannel").css({
-                      "display": "flex",
+                      // "display": "flex",
                       "top": $("#header").outerHeight() + $("#productName").outerHeight() + 20
                   });
                   $("#container_panel").css({
-                      "display": "block",
+                      // "display": "block",
                       "top": $("#header").outerHeight() + $("#productName").outerHeight() + 19
                   });
               }

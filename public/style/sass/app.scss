@@ -690,6 +690,10 @@ $line_height: 1.5;
     align-items: center;
     border-bottom: 1px solid silver;
 
+    @media screen and (min-width: 768px) {
+        display: flex;
+    }
+
     & > svg {
         margin: auto;
         width: 20px;
@@ -709,6 +713,10 @@ $line_height: 1.5;
     border-radius: 0;
     background-color: rgba(255, 255, 255, 0.92);
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
 
     & > header {
         display: flex;
@@ -732,7 +740,6 @@ $line_height: 1.5;
             align-items: center;
         }
     }
-
     & > article {
         margin: 10px 0 20px;
         text-align: center;
@@ -752,7 +759,6 @@ $line_height: 1.5;
             }
         }
     }
-
     & > footer {
         display: flex;
         flex-direction: column;
