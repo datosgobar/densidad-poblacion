@@ -418,7 +418,7 @@ $(window).ready(function() {
 
               $(window).resize(function() { // Manejo de cambios de tamaño de pantalla
 
-                  if ($("body").outerWidth() > 768) {
+                  if ($("body").outerWidth() >= 768) {
 
                       $('.header_map').show();
 

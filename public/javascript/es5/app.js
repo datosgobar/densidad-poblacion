@@ -136,7 +136,6 @@ $(window).ready(function () {
     }
 
     function renderMap(data, varGlobal) {
-        console.log(data.coordenadas);
         // MapBox
         mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbWxvcGV6IiwiYSI6ImNpdWhrYWdvNjAwdjYzcHFmaDl1YTQyOTYifQ.g62pBFWJnDt8vIiHQ5HM8A';
         if (!mapboxgl.supported()) {
@@ -410,7 +409,7 @@ $(window).ready(function () {
                 $(window).resize(function () {
                     // Manejo de cambios de tamaño de pantalla
 
-                    if ($("body").outerWidth() > 768) {
+                    if ($("body").outerWidth() >= 768) {
 
                         $('.header_map').show();
 
