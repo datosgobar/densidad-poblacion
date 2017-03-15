@@ -268,7 +268,7 @@ $(window).ready(function() {
           function panelIzquierdo() {
               var panelState = 0;
 
-              $("#button_pannel").click(function() {
+              $("#button_pannel").on('click', function() {
                   // Panel Izquierdo Mostrar/Ocultar
                   if (panelState == 0) {
                       $("#container_panel").fadeOut("fast");
@@ -324,7 +324,7 @@ $(window).ready(function() {
                           'stroke-width': '0.5'
                       });
                   });
-                  elemento.click(function(e) {
+                  elemento.on('click touchstart', function(e) {
                       datos.mapbox.flyTo({
                           center: coordenada
                       });

@@ -21,9 +21,9 @@ $icon_text: white;
 
 
 #productName {
-  position: absolute;
-  top: 72px;
-  width: 100%;
+  // position: absolute;
+  // top: 72px;
+  // width: 100%;
   z-index: 700;
   background-color: white;
   // box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5);
@@ -32,6 +32,10 @@ $icon_text: white;
   align-items: center;
   flex-direction: row;
   padding: 0px;
+  position: fixed;
+  top: 72px;
+  left: 0px;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
       height: 72px;
@@ -158,6 +162,11 @@ $navHeight: 72px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
       padding-top: 144px;
