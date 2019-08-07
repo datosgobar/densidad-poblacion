@@ -152,7 +152,7 @@ $(window).ready(function() {
       } else {
           data.mapbox = new mapboxgl.Map({
               container: 'map',
-              style: 'mapbox://styles/gonzalobb/cjz1bzl2927c01cld31lbsy56',
+              style: 'mapbox://styles/gonzalobb/cjz1ixb3w25991crtkt1n68zy',
               center: data.coordenadas,
               zoom: 10,
               minZoom: 8,
