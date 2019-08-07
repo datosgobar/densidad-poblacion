@@ -137,7 +137,7 @@ $(window).ready(function () {
 
     function renderMap(data, varGlobal) {
         // MapBox
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZnJhbWxvcGV6IiwiYSI6ImNpdWhrYWdvNjAwdjYzcHFmaDl1YTQyOTYifQ.g62pBFWJnDt8vIiHQ5HM8A';
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ29uemFsb2JiIiwiYSI6ImNqMXBjY3BsajAwMWgzM253ZnJwbjlxb2sifQ.FNY4jZ525MbOkxg0oVKljw';
         if (!mapboxgl.supported()) {
             alert('Este sitio no es soportado por este navegador.');
         } else {
